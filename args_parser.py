@@ -3,7 +3,7 @@ import argparse
 def args_parser():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('-arch', type=str, default='S3-Net',
+    parser.add_argument('-arch', type=str, default='S3_Net',
                             choices=[# these four models are used for ablation experiments
                                      'SpatCNN', 'SpecCNN',
                                      'SpatRNET', 'SpecRNET', 
@@ -38,4 +38,5 @@ def args_parser():
     parser.add_argument('--image_size', type=int, default=128)
  
     args = parser.parse_args()
+
     return args
