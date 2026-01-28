@@ -71,7 +71,7 @@ class S3_Net(nn.Module):
 
 
     def forward(self, x_lr, x_hr):
-        if self.arch == 'SSRNET':
+        if self.arch == 'S3_Net':
             x = F.interpolate(x_lr, scale_factor=self.scale_ratio, mode='bilinear')
             x = torch.cat((x, x_hr), 1)
             x = self.conv1(x)
@@ -162,4 +162,5 @@ if __name__ == "__main__":
     print('Parameters number is ', sum(param.numel() for param in model.parameters()))
 
     print(torch.__version__)
+
 
